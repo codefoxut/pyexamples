@@ -1,4 +1,4 @@
-from creditcard import CreditCard
+from chapter_2.creditcard import CreditCard
 
 
 class PredatoryCreditCard(CreditCard):
@@ -15,7 +15,7 @@ class PredatoryCreditCard(CreditCard):
         :param limit: credit limit (measured in dollars)
         :param apr: annual percentage rate(e.g., 0.0825 for 8.25% APR)
         """
-        super(PredatoryCreditCard, self).__init__(customer, bank, acnt, limit)   # call super constructor
+        super().__init__(customer, bank, acnt, limit)   # call super constructor
         self._apr = apr
 
     def charge(self, price):
@@ -24,7 +24,7 @@ class PredatoryCreditCard(CreditCard):
         Return True if charge was processed.
         Return False and assess $5 fee if charge was denied.
         """
-        success = super(PredatoryCreditCard, self).charge(price)    # call inherited method
+        success = super().charge(price)    # call inherited method
         if not success:
             self._balance += 5                                      # assess penalty
         return success                                              # caller expects return value

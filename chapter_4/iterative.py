@@ -1,4 +1,4 @@
-# /usr/bin/python
+# /usr/local/bin/python3
 def binary_search_iterative(data, target):
     """Return True if target is found in the given Python list."""
     low = 0
@@ -27,8 +27,8 @@ def reverse_iterative(S):
 
 if __name__ == '__main__':
     data = [2, 4, 6, 9, 10, 15, 17, 19, 21, 26, 27, 29, 34, 37, 38, 40, 42, 47]
-    print binary_search_iterative(data, 38)
-    print data
+    print (binary_search_iterative(data, 38))
+    print (data)
     reverse_iterative(data)
-    print data
+    print (data)
 
