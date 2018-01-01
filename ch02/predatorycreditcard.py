@@ -1,4 +1,4 @@
-from ch02.creditcard import CreditCard
+from creditcard import CreditCard
 
 
 class PredatoryCreditCard(CreditCard):
@@ -36,3 +36,7 @@ class PredatoryCreditCard(CreditCard):
             # if positive balance, convert APR to monthly multiplicative factor
             monthly_factor = pow(1 + self._apr, 1/12)
             self._balance *= monthly_factor
+
+
+if __name__ == '__main__':
+    print("Here!!!!")
