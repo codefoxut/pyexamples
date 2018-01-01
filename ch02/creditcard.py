@@ -1,5 +1,6 @@
 class CreditCard(object):
     """ A consumer credit card. """
+    __slots__ = '_customer', '_bank', '_account', '_limit', '_balance'
 
     def __init__(self, customer, bank, acnt, limit):
         """Create a new credit card instance.

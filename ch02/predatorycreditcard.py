@@ -1,7 +1,8 @@
-from chapter_2.creditcard import CreditCard
+from ch02.creditcard import CreditCard
 
 
 class PredatoryCreditCard(CreditCard):
+    __slots__ = '_apr'
     """An extension to CreditCard that compounds interest and fees."""
 
     def __init__(self, customer, bank, acnt, limit, apr):
