@@ -3,7 +3,7 @@ from ds_classes.exceptions import Empty
 
 class ArrayQueue(object):
     """FIFO queue implementation using a Python list as underlying storage."""
-    DEFAULT_CAPACITY = 10  # moderate capacity for all new queues
+    DEFAULT_CAPACITY = 0  # moderate capacity for all new queues
 
     def __init__(self):
         """Create an empty queue."""
@@ -63,7 +63,7 @@ class ArrayQueue(object):
     def __str__(self):
         """Representation in string"""
         queue = []
-        # print(self._data, self._front, self._size)
+        # print("raw queue -->", self._data, self._front, self._size)
         for x in range(self._size):
             queue.append(str(self._data[(self._front + x) % len(self._data)]))
         return ", ".join(queue)
@@ -86,6 +86,7 @@ if __name__ == '__main__':
     print(s.dequeue())
     s.enqueue(6)
     s.enqueue(8)
+    s.enqueue(10)
 
 
 
