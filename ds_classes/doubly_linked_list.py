@@ -54,7 +54,7 @@ class _DoublyLinkedBase(object):
         predecessor._next = newest
         successor._prev = newest
         self._size += 1
-        print("DLL-->", self)
+        # print("DLL-->", self)
         return newest
 
     def _delete_node(self, node):
