@@ -70,6 +70,6 @@ if __name__ == '__main__':
     c2 = Creature(1, 3)
     game = PermanentDamageCardGame([c1, c2])
     assert -1 == game.combat(0, 1), 'Nobody should win this battle.'
-    assert 1 ==  c1.health
-    assert 2 ==  c2.health
-    assert 1 ==  game.combat(0, 1), 'Creature at index 1 should win this'
+    assert 1 == c1.health
+    assert 2 == c2.health
+    assert 1 == game.combat(0, 1), 'Creature at index 1 should win this'
