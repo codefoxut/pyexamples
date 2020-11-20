@@ -1,7 +1,7 @@
 .PHONY: notebook
 
 bootstrap_notebook:
-	python3.8 -m venv notebook_env
+	python3.7 -m venv notebook_env
 	notebook_env/bin/pip3 install -r config/requirements_nb.txt
 
 notebook:

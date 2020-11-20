@@ -131,3 +131,4 @@ venv.bak/
 
 .gitignore
 .idea/
+/notebook_env1/
