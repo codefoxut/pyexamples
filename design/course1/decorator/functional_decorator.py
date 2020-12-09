@@ -2,9 +2,9 @@ import time
 
 
 def time_it(func):
-    def wrapper():
+    def wrapper(*args, **kwargs):
         start = time.perf_counter()
-        result = func()
+        result = func(*args, **kwargs)
         end = time.perf_counter()
         print(f'{func.__name__} took {int((end-start)*1000)}ms')
         return result
