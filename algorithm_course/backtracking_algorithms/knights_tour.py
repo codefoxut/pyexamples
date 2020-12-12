@@ -2,17 +2,21 @@
 
 class KnightsTour:
 
-    def __init__(self, n):
+    def __init__(self, n, start_at_center=False):
         self.board_size = n
         self.knights_moves = [(2, 1), (2, -1), (1, 2), (1, -2), (-2, -1), (-2, 1), (-1, -2), (-1, 2)]
         self.board = [[-1 for _ in range(self.board_size)] for _ in range(self.board_size)]
+        self.start_at_center = start_at_center
 
     def display_board(self):
         for i in self.board:
             print(" ".join([str(j).center(4) for j in i]))
 
     def knights_tour(self):
-        self.board[0][0] = 0
+        if self.start_at_center:
+            self.board[self.board_size // 2][self.board_size // 2] = 0
+        else:
+            self.board[0][0] = 0
         if self.solve(0, 0, 1):
             self.display_board()
         else:
@@ -41,7 +45,7 @@ class KnightsTour:
             return False
         if y_pos < 0 or y_pos >= self.board_size:
             return False
-        if self.board[x_pos][y_pos] >= 0:
+        if self.board[x_pos][y_pos] > -1:
             return False
         return True
 
