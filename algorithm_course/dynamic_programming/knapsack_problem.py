@@ -31,14 +31,42 @@ class KnapsackProblem:
                 print("We take item #%d, with  value=%d" % (i, self.weight_of_items[i]))
                 w = w - self.weight_of_items[i]
 
+    @staticmethod
+    def solve_recursion(m, w, v, n):
+        """
+
+        Args:
+            m - capacity of the knapsack,
+            w - weights list,
+            v - values list,
+            n - number of items we consider
+
+        Returns:
+
+        """
+
+        # base case(s)
+        if m == 0 or n == 0:
+            return 0
+
+        # calculate the sub-problems with recursion
+        if w[n-1] > m:
+            return KnapsackProblem.solve_recursion(m, w, v, n - 1)
+        else:
+            n_included = v[n-1] + KnapsackProblem.solve_recursion(m - w[n -1], w, v, n - 1)
+            n_excluded = KnapsackProblem.solve_recursion(m, w, v, n-1)
+            return max(n_excluded, n_included)
+
+        # combine the sub results (here we just have to use the max function)
+
 
 if __name__ == '__main__':
     # problem 1
-    n = 5
+    n_ = 5
     c = 10
     weights = [0, 1, 3, 4, 5, 6]
     profits = [0, 1, 4, 5, 7, 10]
-    k = KnapsackProblem(n, c, weights, profits)
+    k = KnapsackProblem(n_, c, weights, profits)
     k.dynamic_programming_approach()
     k.show_result()
     # problem 2
@@ -49,3 +77,5 @@ if __name__ == '__main__':
     k2 = KnapsackProblem(n1, c1, weights1, profits1)
     k2.dynamic_programming_approach()
     k2.show_result()
+
+    print(KnapsackProblem.solve_recursion(c, weights[1:], profits[1:], n_))
