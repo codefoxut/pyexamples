@@ -1,0 +1,6 @@
+
+
+# applications / volcanos
+folium
+jinja2
+pandas
