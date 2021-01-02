@@ -1,6 +1,2 @@
+-r applications/requirements.txt
 
-
-# applications / volcanos
-folium
-jinja2
-pandas

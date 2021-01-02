@@ -1,0 +1,8 @@
+
+# 2. volcanos
+folium
+jinja2
+pandas
+
+# 3. personal_website
+flask
