@@ -2,3 +2,7 @@
 # postgresql
 psycopg2-binary
 
+# mysql
+mysql-connector
+mysqlclient
+
