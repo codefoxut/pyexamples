@@ -4,3 +4,5 @@ wheel
 
 -r gui_examples/requirements.txt
 
+-r database_examples/requirements.txt
+
