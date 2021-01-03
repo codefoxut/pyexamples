@@ -1,2 +1,6 @@
+wheel
+
 -r applications/requirements.txt
+
+-r gui_examples/requirements.txt
 
