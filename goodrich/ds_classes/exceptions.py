@@ -1,5 +1,5 @@
 
-__all__ = ['Empty',]
+__all__ = ['Empty', ]
 
 
 class Empty(Exception):

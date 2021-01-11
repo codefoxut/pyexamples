@@ -1,4 +1,4 @@
-from ds_classes.exceptions import Empty
+from exceptions import Empty
 
 
 class LinkedStack(object):

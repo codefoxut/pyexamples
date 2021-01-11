@@ -1,5 +1,5 @@
-from ds_classes.exceptions import Empty
-from ds_classes.array_queue import ArrayQueue
+from exceptions import Empty
+from array_queue import ArrayQueue
 
 
 class ArrayDeque(object):

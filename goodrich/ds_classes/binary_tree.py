@@ -1,4 +1,4 @@
-from ds_classes.tree import Tree
+from tree import Tree
 
 
 class BinaryTree(Tree):
@@ -14,7 +14,7 @@ class BinaryTree(Tree):
 
     def right(self, p):
         """Return a Position representing p's right child.
-        
+
         Return None if p does not have a right child.
         """
         raise NotImplementedError('must be implemented by subclass')

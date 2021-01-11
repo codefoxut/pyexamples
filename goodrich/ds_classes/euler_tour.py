@@ -1,6 +1,8 @@
+
+
 class EulerTour(object):
     """Abstract base class for performing Euler tour of a tree.
-    
+
     _hook_previsit and _hook_postvisit may be overridden by subclasses.
     """
 
