@@ -41,11 +41,13 @@ class ALGraph(AbstractGraph):
         v = Vertex(x=x)
         self._vertices.append(v)
         self._edges[v] = []
+        return v
 
     def insert_edge(self, u, v, x=None):
         eg = Edge(u, v, x=x)
         self._edges[v].append(eg)
         self._edges[u].append(eg)
+        return eg
 
     def remove_vertex(self, v):
         self._vertices.remove(v)
@@ -59,3 +61,21 @@ class ALGraph(AbstractGraph):
     def remove_edge(self, eg):
         for val in self._edges.values():
             val.remove(eg)
+
+
+if __name__ == '__main__':
+    g = ALGraph()
+    v_list = ['u', 'v', 'w', 'z']
+    edges_list = [('u', 'v', 'e'), ('u', 'w', 'g'), ('v', 'w', 'f'), ('w', 'z', 'h')]
+
+    vertices_dict = {}
+    for t in v_list:
+        v_obj = g.insert_vertex(x=t)
+        vertices_dict[t] = v_obj
+
+    for ed in edges_list:
+        edge = g.insert_edge(vertices_dict[ed[0]], vertices_dict[ed[1]], ed[2])
+
+    print(g.degree(vertices_dict['v']))
+    print(g.incident_edges(vertices_dict['v']))
+    print(g.get_edge(vertices_dict['w'], vertices_dict['z']))

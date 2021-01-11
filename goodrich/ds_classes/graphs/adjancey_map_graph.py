@@ -35,7 +35,7 @@ class AMGraph(AbstractGraph):
 
     def incident_edges(self, v, out=True):
         adj = self._outgoing if out else self._incoming
-        return adj[v].values()
+        return list(adj[v].values())
 
     def insert_vertex(self, x=None):
         v = Vertex(x=x)
@@ -44,10 +44,11 @@ class AMGraph(AbstractGraph):
             self._incoming[v] = {}
         return v
 
-    def insert_edge(self, u, v, x=None):
+    def insert_edge(self, u: Vertex, v: Vertex, x=None):
         eg = Edge(u, v, x=x)
         self._outgoing[u][v] = eg
         self._incoming[v][u] = eg
+        return eg
 
     def remove_vertex(self, v):
         del self._outgoing[v]
@@ -58,3 +59,21 @@ class AMGraph(AbstractGraph):
         u, v = eg.endpoints()
         del self._outgoing[u][v]
         del self._incoming[v][u]
+
+
+if __name__ == '__main__':
+    g = AMGraph()
+    v_list = ['u', 'v', 'w', 'z']
+    edges_list = [('u', 'v', 'e'), ('u', 'w', 'g'), ('v', 'w', 'f'), ('w', 'z', 'h')]
+
+    vertices_dict = {}
+    for t in v_list:
+        v_obj = g.insert_vertex(x=t)
+        vertices_dict[t] = v_obj
+
+    for ed in edges_list:
+        edge = g.insert_edge(vertices_dict[ed[0]], vertices_dict[ed[1]], ed[2])
+
+    print(g.degree(vertices_dict['v']))
+    print(g.incident_edges(vertices_dict['v']))
+    print(g.get_edge(vertices_dict['w'], vertices_dict['z']))

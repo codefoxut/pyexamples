@@ -1,7 +1,7 @@
 from base import AbstractGraph, Vertex, Edge
 
 
-class AMGraph(AbstractGraph):
+class MatrixGraph(AbstractGraph):
 
     def __init__(self, n):
         self._size = n
@@ -41,12 +41,14 @@ class AMGraph(AbstractGraph):
             self._vertices[_idx] = v
         else:
             raise Exception("space is used.")
+        return v
 
     def insert_edge(self, u, v, x=None):
         eg = Edge(u, v, x=x)
         u_idx = self._vertices.index(u)
         v_idx = self._vertices.index(v)
         self._matrix[u_idx][v_idx] = eg
+        return eg
 
     def remove_vertex(self, v):
         v_idx = self._vertices.index(v)
@@ -66,4 +68,22 @@ class AMGraph(AbstractGraph):
         self._matrix[u_idx][v_idx] = None
         self._matrix[v_idx][u_idx] = None
         self._edges.remove(eg)
+
+
+if __name__ == '__main__':
+    g = MatrixGraph(10)
+    v_list = ['u', 'v', 'w', 'z']
+    edges_list = [('u', 'v', 'e'), ('u', 'w', 'g'), ('v', 'w', 'f'), ('w', 'z', 'h')]
+
+    vertices_dict = {}
+    for t in v_list:
+        v_obj = g.insert_vertex(x=t)
+        vertices_dict[t] = v_obj
+
+    for ed in edges_list:
+        edge = g.insert_edge(vertices_dict[ed[0]], vertices_dict[ed[1]], ed[2])
+
+    print(g.degree(vertices_dict['v']))
+    print(g.incident_edges(vertices_dict['v']))
+    print(g.get_edge(vertices_dict['w'], vertices_dict['z']))
 

@@ -44,10 +44,12 @@ class ELGraph(AbstractGraph):
     def insert_vertex(self, x=None):
         v = Vertex(x=x)
         self._vertices.append(v)
+        return v
 
     def insert_edge(self, u, v, x=None):
         eg = Edge(u, v, x=x)
         self._edges.append(eg)
+        return eg
 
     def remove_vertex(self, v):
         self._vertices.remove(v)
@@ -58,3 +60,21 @@ class ELGraph(AbstractGraph):
 
     def remove_edge(self, eg):
         self._edges.remove(eg)
+
+
+if __name__ == '__main__':
+    g = ELGraph()
+    v_list = ['u', 'v', 'w', 'z']
+    edges_list = [('u', 'v', 'e'), ('u', 'w', 'g'), ('v', 'w', 'f'), ('w', 'z', 'h')]
+
+    vertices_dict = {}
+    for t in v_list:
+        v_obj = g.insert_vertex(x=t)
+        vertices_dict[t] = v_obj
+
+    for ed in edges_list:
+        edge = g.insert_edge(vertices_dict[ed[0]], vertices_dict[ed[1]], ed[2])
+
+    print(g.degree(vertices_dict['v']))
+    print(g.incident_edges(vertices_dict['v']))
+    print(g.get_edge(vertices_dict['w'], vertices_dict['z']))

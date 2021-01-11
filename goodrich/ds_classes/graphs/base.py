@@ -10,6 +10,9 @@ class Vertex:
     def element(self):
         return self._element
 
+    def __repr__(self):
+        return f'{self._element}'
+
     def __hash__(self):
         return hash(id(self))
 
@@ -33,6 +36,9 @@ class Edge:
 
     def __hash__(self):
         return hash((self._origin, self._destination))
+
+    def __repr__(self):
+        return f'{self._origin}->{self._destination} with value {self._element}'
 
 
 class AbstractGraph(ABC):
@@ -64,7 +70,7 @@ class AbstractGraph(ABC):
         """
 
     @abstractmethod
-    def incident_edges(self, v, out=True):
+    def incident_edges(self, v: Vertex, out=True):
         """Return an iteration of all the edges incident to vertex v.
         For a directed graph, report outgoing edges by default, report incoming edges if optional
         parameter is set to False.
@@ -75,11 +81,11 @@ class AbstractGraph(ABC):
         """Create and return a new vertex storing element x."""
 
     @abstractmethod
-    def insert_edge(self, u, v, x=None):
+    def insert_edge(self, u: Vertex, v: Vertex, x=None):
         """Create and return a new edge from vertex u to vertex v, storing element x."""
 
     @abstractmethod
-    def remove_vertex(self, v):
+    def remove_vertex(self, v: Vertex):
         """Remove vertex v and all its incident edges from the graph."""
 
     @abstractmethod
