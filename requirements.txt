@@ -9,6 +9,9 @@ certifi
 
 -r database_examples/requirements.txt
 
+-r http_examples/requirements.txt
+
 -r grpc_examples/requirements.txt
 
 -r image_processing/requirements.txt
+
