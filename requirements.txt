@@ -11,6 +11,7 @@ certifi
 
 -r http_examples/requirements.txt
 
+-r protobuf_examples/requirements.txt
 -r grpc_examples/requirements.txt
 
 -r image_processing/requirements.txt
