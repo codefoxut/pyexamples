@@ -18,7 +18,7 @@ tornado==6.1
 webencodings==0.5.1
 pyparsing==2.4.7
 packaging==20.4
-bleach==3.2.1
+bleach==3.3.0
 pandocfilters==1.4.3
 entrypoints==0.3
 pygments==2.7.2
