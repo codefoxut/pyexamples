@@ -21,7 +21,7 @@ packaging==20.4
 bleach==3.2.1
 pandocfilters==1.4.3
 entrypoints==0.3
-pygments==2.7.2
+pygments==2.7.4
 jupyterlab-pygments==0.1.2
 defusedxml==0.6.0
 nest-asyncio==1.4.3
