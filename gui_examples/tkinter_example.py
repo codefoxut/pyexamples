@@ -43,7 +43,6 @@ class KGConverter(tk.Frame):
         self.t1, self.t2, self.t3 = None, None, None
         self.create_widgets()
 
-
     def create_widgets(self):
         l1 = tk.Label(self.master, text="Kg", justify="center")
         l1.grid(row=0, column=0)
@@ -92,5 +91,5 @@ class KGConverter(tk.Frame):
 
 
 if __name__ == '__main__':
-    # FirstPyGUI().converter_gui()
-    KGConverter.run()
+    FirstPyGUI().converter_gui()
+    # KGConverter.run()

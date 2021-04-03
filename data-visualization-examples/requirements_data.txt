@@ -1,0 +1,7 @@
+bokeh
+
+jupyter
+notebook
+pandas
+xlrd
+openpyxl

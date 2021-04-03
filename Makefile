@@ -13,4 +13,17 @@ notebook:
 
 
 clean-venv:
-	rm -Rf venv
+	rm -Rf myenv/venv_${APP_NAME}
+
+
+bootstrap-init:
+	python3.9 -m venv myenv/venv_${APP_NAME}
+	myenv/venv_${APP_NAME}/bin/pip3 install -U pip setuptools wheel
+
+
+bootstrap-bokeh-app:
+	@make bootstrap-init APP_NAME=bokeh_app
+	myenv/venv_bokeh_app/bin/pip3 install -r data-visualization-examples/requirements_data.txt
+
+run_bokeh_jupyter:
+	@myenv/venv_bokeh_app/bin/jupyter notebook
