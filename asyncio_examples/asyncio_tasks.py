@@ -58,6 +58,7 @@ async def factorial(name, number):
         await asyncio.sleep(1)
         f *= i
     print(f"Task {name}: factorial({number}) = {f} at {time.strftime('%X')}")
+    return f
 
 
 async def try_gather():
@@ -67,6 +68,18 @@ async def try_gather():
         factorial("B", 3),
         factorial("C", 4),
     )
+
+
+async def try_gather2():
+    # Schedule three calls *concurrently*:
+    tasks = [
+        asyncio.create_task(factorial("A", 2), name="fac2"),
+        asyncio.create_task(factorial("B", 3), name="fac3"),
+        asyncio.create_task(factorial("C", 4), name="fac4")
+    ]
+    await asyncio.gather(*tasks)
+
+    return tasks
 
 
 async def eternity():
@@ -152,7 +165,7 @@ async def check_cancel_me():
         print("main(): cancel_me is cancelled now")
 
 
-async def check_threadsafe():
+async def check_thread_safe():
     loop = asyncio.get_event_loop()
     timeout = 3
 
@@ -181,13 +194,17 @@ def run_coroutine1():
     # asyncio.run(hello_world2())
     # asyncio.run(hello_world3())
     # asyncio.run(display_date())
-    # asyncio.run(try_gather())
+    resp = asyncio.run(try_gather2())
+    for x in resp:
+        print(dir(x))
+        print(x)
+        print(x.result())
     # asyncio.run(check_timeout())
-    asyncio.run(test_failed_wait())
-    asyncio.run(test_wait_passed())
-    asyncio.run(check_cancel_me())
-    asyncio.run(check_thread())
-    asyncio.run(check_threadsafe())
+    # asyncio.run(test_failed_wait())
+    # asyncio.run(test_wait_passed())
+    # asyncio.run(check_cancel_me())
+    # asyncio.run(check_thread())
+    # asyncio.run(check_thread_safe())
 
 
 if __name__ == '__main__':
