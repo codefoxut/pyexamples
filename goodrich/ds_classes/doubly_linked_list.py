@@ -1,3 +1,5 @@
+
+
 class _DoublyLinkedBase(object):
     """A base class providing a doubly linked list representation."""
 

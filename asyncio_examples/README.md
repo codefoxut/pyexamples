@@ -57,6 +57,20 @@ Awaitables:
         + A Future is a special low-level awaitable object that represents an eventual result of 
           an asynchronous operation.
         + Future objects in asyncio are needed to allow callback-based code to be used with async/await.
+    
+
+Streams:
+-------
+
+##### Stream Functions:
+1. _coroutine_ **asyncio.open_connection**(host=None, port=None, *, loop=None, limit=None, ssl=None, family=0, proto=0, 
+   flags=0, sock=None, local_addr=None, server_hostname=None, ssl_handshake_timeout=None):
+   - _Establish a network connection and return a pair of (reader, writer) objects._
+   
+2. _coroutine_ **asyncio.start_server**(client_connected_cb, host=None, port=None, *, loop=None, limit=None, 
+   family=socket.AF_UNSPEC, flags=socket.AI_PASSIVE, sock=None, backlog=100, ssl=None, reuse_address=None, 
+   reuse_port=None, ssl_handshake_timeout=None, start_serving=True):
+    - _Start a socket server._
 
 
 

@@ -1,0 +1,16 @@
+
+# 2. volcanos
+folium
+jinja2
+pandas
+
+# 3. personal_website
+flask
+
+
+# 5. Feel-good mobile app.
+kivy
+# kivy.deps.glew
+docutils
+# pypiwin32
+# kivy.deps.sdl2

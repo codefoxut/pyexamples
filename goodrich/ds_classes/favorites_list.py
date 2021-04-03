@@ -1,4 +1,4 @@
-from ds_classes.positional_list import PositionalList
+from positional_list import PositionalList
 
 
 class FavoritesList(object):

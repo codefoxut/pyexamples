@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "protobuf_examples/protos/practices/practise2_city.proto";
+package building.street;
+
+message Street3 {
+    string street_name = 1;
+    City3 city = 2;
+}

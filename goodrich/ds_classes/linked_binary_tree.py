@@ -1,4 +1,4 @@
-from ds_classes.binary_tree import BinaryTree
+from binary_tree import BinaryTree
 
 
 class LinkedBinaryTree(BinaryTree):

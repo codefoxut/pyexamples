@@ -1,4 +1,4 @@
-from ds_classes.doubly_linked_list import _DoublyLinkedBase
+from doubly_linked_list import _DoublyLinkedBase
 
 
 class PositionalList(_DoublyLinkedBase):

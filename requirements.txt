@@ -1,0 +1,18 @@
+wheel
+requests
+aiohttp
+certifi
+
+-r applications/requirements.txt
+
+-r gui_examples/requirements.txt
+
+-r database_examples/requirements.txt
+
+-r http_examples/requirements.txt
+
+-r protobuf_examples/requirements.txt
+-r grpc_examples/requirements.txt
+
+-r image_processing/requirements.txt
+

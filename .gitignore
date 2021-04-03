@@ -131,4 +131,5 @@ venv.bak/
 
 .gitignore
 .idea/
-/notebook_env1/
+
+/applications/10_mega_projects_course/bookshop/bookshop.db

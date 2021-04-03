@@ -1,6 +1,6 @@
 json5==0.9.5
 MarkupSafe==1.1.1
-jinja2==2.11.2
+jinja2==2.11.3
 pycparser==2.20
 cffi==1.14.3
 six==1.15.0
@@ -18,10 +18,10 @@ tornado==6.1
 webencodings==0.5.1
 pyparsing==2.4.7
 packaging==20.4
-bleach==3.2.1
+bleach==3.3.0
 pandocfilters==1.4.3
 entrypoints==0.3
-pygments==2.7.2
+pygments==2.7.4
 jupyterlab-pygments==0.1.2
 defusedxml==0.6.0
 nest-asyncio==1.4.3
@@ -50,7 +50,7 @@ ipykernel==5.3.4
 Send2Trash==1.5.0
 notebook==6.1.5
 idna==2.10
-urllib3==1.26.2
+urllib3==1.26.3
 certifi==2020.11.8
 chardet==3.0.4
 requests==2.25.0
