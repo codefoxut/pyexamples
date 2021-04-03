@@ -15,4 +15,5 @@ certifi
 -r grpc_examples/requirements.txt
 
 -r image_processing/requirements_ip.txt
+-r web_scraping/requirements_scraping.txt
 
