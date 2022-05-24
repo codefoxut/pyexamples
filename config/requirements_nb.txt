@@ -55,4 +55,4 @@ certifi==2020.11.8
 chardet==3.0.4
 requests==2.25.0
 jupyterlab-server==1.2.0
-jupyterlab==2.2.9
+jupyterlab==2.2.10
