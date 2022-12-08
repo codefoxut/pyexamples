@@ -51,7 +51,7 @@ Send2Trash==1.5.0
 notebook==6.4.12
 idna==2.10
 urllib3==1.26.5
-certifi==2020.11.8
+certifi==2022.12.7
 chardet==3.0.4
 requests==2.25.0
 jupyterlab-server==1.2.0
